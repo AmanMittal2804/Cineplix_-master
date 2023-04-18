@@ -1,0 +1,25 @@
+.pagination{
+    display: flex;
+    margin: 10px 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .page{
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .page.disabled{
+    cursor: not-allowed;
+    color: grey;
+  }
+  
+  .current{
+    padding: 20px 30px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    font-size: 20px;
+    font-weight: 500;
+  }

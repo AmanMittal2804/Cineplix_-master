@@ -1,0 +1,12 @@
+.log{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .log:focus{
+    background-color: var(--primary-color);
+  }
