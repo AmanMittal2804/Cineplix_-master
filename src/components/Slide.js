@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-// import "./home.css"
 import "./Slide.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -47,7 +46,7 @@ const Home = () => {
                         ))
                     }
                 </Carousel>
-                {/* <MovieList /> */}
+                
             </div>
         </>
     )

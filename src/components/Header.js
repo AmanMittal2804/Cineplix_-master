@@ -1,6 +1,7 @@
 import React from 'react'
 import Log from './Log';
 import Search from './Search'
+import Button from './Button'
 import './Header.css'
 import { Link } from "react-router-dom"
 function Header({setData}) {
@@ -14,6 +15,7 @@ function Header({setData}) {
                 <Link to="/aman/upcoming" style={{textDecoration: "none"}}><span>Upcoming</span></Link>
                 <span><Search setData={setData}/></span>
                 <span style={{marginLeft: "175px" }}><Log/></span>
+                {/* <span style={{marginLeft: "175px" }}><Button/></span> */}
                 
             </div>
         
