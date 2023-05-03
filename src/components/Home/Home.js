@@ -1,5 +1,5 @@
-import React, { useEffect, useState }  from 'react'
-import Movies from './Movies'
+import React from 'react'
+import Movies from '../Movies/Movies'
 
 export default function Home({data,setData}) {
     

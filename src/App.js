@@ -8,6 +8,7 @@ import Movie from './components/Movie';
 import Home from './components/Home';
 import Slide from './components/Slide'
 import Login from './components/Login';
+import Trial from './components/Trial';
 function App() {
   const [data, setData] = useState([])
   return (
@@ -16,10 +17,12 @@ function App() {
       <Navbar setData={setData}/>
       <Genres setData={setData} data= {data}/>
       <Slide/>
+      {/* <Login/> */}
         <Routes> 
           <Route index element={<Home data={data} setData={setData}/>}></Route>
-          {/* <Route path="anon/:log" element={<Login/>}></Route> */}
+          {/* <Route path="anon/" element={<Login/>}></Route> */}
           <Route path="movie/:id" element={<Movie />}></Route>
+          {/* <Route path="looks/:it" element={<Trial/>}></Route> */}
           <Route path="aman/:type" element={<Movies data={data} setData={setData}/>}></Route>
           
         </Routes>

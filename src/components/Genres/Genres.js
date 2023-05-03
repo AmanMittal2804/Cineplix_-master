@@ -1,5 +1,25 @@
 import React, { useState } from 'react'
-import './Genres.css'
+// import './Genres.css'
+ 
+var stylingObject={
+    tags:{
+        width: "80%",
+        display: "flex",
+        flexwrap: "wrap",
+        justifycontent: "center",
+        alignitems: "center",
+        margin: "10px auto",
+    },
+    tag:{
+        color: "white",
+        padding: "10px 20px",
+        backgroundcolor: "red",
+        borderradius: "50px",
+        margin: "5px",
+        display: "inline-block",
+        cursor: "pointer",
+    }
+}
 function Genres({ setData }) {
     const [selectedGenre, setSelectedGenre] = useState([]);
 
@@ -88,8 +108,8 @@ function Genres({ setData }) {
     const selectGenre = async (id) => {
         if (selectedGenre.includes(id)) {
             const index = selectedGenre.indexOf(id);
-            if (index > -1) { // only splice array when item is found
-                selectedGenre.splice(index, 1); // 2nd parameter means remove one item only
+            if (index > -1) { 
+                selectedGenre.splice(index, 1);
             }
         } else {
             selectedGenre.push(id)
@@ -105,11 +125,12 @@ function Genres({ setData }) {
     return (
         <>
 
-            <div id="tags">
+            <div style={stylingObject.tags}>
                 {genres?.map((gen) => {
                     return <div key={gen.id} className={`tag ${selectedGenre.includes(gen.id) ? "highlight" : ""}`} onClick={() => selectGenre(gen.id)} >{gen.name}</div>
+                    
                 })}
-                {selectedGenre.length > 0 ? <><div className="tag" style={{ background: "red" }} onClick={handleClearGenre}>Clear X</div></> : null}
+                {selectedGenre.length > 0 ? <><div style={stylingObject.tag}  onClick={handleClearGenre}>Clear X</div></> : null}
             </div>
 
         </>

@@ -75,6 +75,7 @@ function Login() {
   );
 
   return (
+    <>
     <Link to="/anon/mittal" style={{textDecoration: "none"}}>
     <div className="Login">
       <div className="login-form">
@@ -83,6 +84,7 @@ function Login() {
       </div>
     </div>
     </Link>
+    </>
   );
 }
 
