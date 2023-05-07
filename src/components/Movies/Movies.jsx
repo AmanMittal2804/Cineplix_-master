@@ -3,14 +3,8 @@ import MovieCard from '../Moviecard/MovieCard';
 import Pagination from '../Pagination/Pagination';
 import './Movies.css'
 import { useParams } from "react-router-dom"
+import { OuterMain } from './Movies.styled';
 
-var stylingObject={
-    main:{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-    }
-}
 function Movies({data,setData}) {
     const API_KEY = 'api_key=20a0f69b95b0b10f62ad40120429fea6';
     const BASE_URL = 'https://api.themoviedb.org/3';
@@ -35,11 +29,12 @@ function Movies({data,setData}) {
      
     return (
         <>
-            <main style={stylingObject.main}>
+            <OuterMain><main>
                 {data?.map((movie) => {
                     return <MovieCard key={movie.id} movie={movie}/>
                 })}
             </main>
+            </OuterMain>
             <Pagination nextPage={nextPage} prevPage={prevPage} setData={setData} setNextPage={setNextPage} setPrevPage={setPrevPage}/>
             
         </>

@@ -1,11 +1,10 @@
 import React from 'react'
 import Title from '../Title/Title'
-import Header from './Header'
-
+import Header from '../Header/Header'
 function Navbar({setData}) {
     return (
         <>
-            <Title />
+            <Title name="CINEPLIX"/>
             <Header setData={setData}/>
         </>
     )

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Pagination.css'
+import { CurrentPage, Footer , Pages } from './Pagination.styled';
 function Pagination({setData ,setNextPage,setPrevPage , nextPage, prevPage }) {
     const [pageCnt, setPageCnt] = useState(1)
     const API_KEY = 'api_key=20a0f69b95b0b10f62ad40120429fea6';
@@ -23,11 +24,12 @@ function Pagination({setData ,setNextPage,setPrevPage , nextPage, prevPage }) {
     }
     return (
         <>
-            <div className="pagination">
-                <div className={`page ${!(nextPage >= 2) ? "disabled" : "page"}`} id="prev" onClick={() => prevPageCall(prevPage)} >Previous Page</div>
-                <div className="current" id="current">{pageCnt}</div>
-                <div className="page" id="next" onClick={() => nextPageCall(nextPage)}>Next Page</div>
-            </div>
+        <Footer>
+               <Pages className={`page ${!(nextPage >= 2) ? "disabled" : "page"}`} id="prev" onClick={() => prevPageCall(prevPage)} >Previous Page</Pages>
+               <CurrentPage className="current" id="current"> {pageCnt} </CurrentPage>
+                <Pages className="page" id="next" onClick={() => nextPageCall(nextPage)}>Next Page</Pages>
+        </Footer>
+           
         </>
     )
 }

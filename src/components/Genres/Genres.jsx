@@ -1,25 +1,7 @@
 import React, { useState } from 'react'
-// import './Genres.css'
+
+import { IContainer, OContainer } from './Genres.styled';
  
-var stylingObject={
-    tags:{
-        width: "80%",
-        display: "flex",
-        flexwrap: "wrap",
-        justifycontent: "center",
-        alignitems: "center",
-        margin: "10px auto",
-    },
-    tag:{
-        color: "white",
-        padding: "10px 20px",
-        backgroundcolor: "red",
-        borderradius: "50px",
-        margin: "5px",
-        display: "inline-block",
-        cursor: "pointer",
-    }
-}
 function Genres({ setData }) {
     const [selectedGenre, setSelectedGenre] = useState([]);
 
@@ -124,15 +106,15 @@ function Genres({ setData }) {
     }
     return (
         <>
-
-            <div style={stylingObject.tags}>
+            <OContainer>
+            <div id="tags">
                 {genres?.map((gen) => {
-                    return <div key={gen.id} className={`tag ${selectedGenre.includes(gen.id) ? "highlight" : ""}`} onClick={() => selectGenre(gen.id)} >{gen.name}</div>
+                    return <IContainer><div key={gen.id} className={`tag ${selectedGenre.includes(gen.id) ? "highlight" : ""}`} onClick={() => selectGenre(gen.id)} >{gen.name}</div></IContainer>
                     
                 })}
-                {selectedGenre.length > 0 ? <><div style={stylingObject.tag}  onClick={handleClearGenre}>Clear X</div></> : null}
+                <IContainer>{selectedGenre.length > 0 ? <><div className = "tag" onClick={handleClearGenre}>Clear X</div></> : null}</IContainer>
             </div>
-
+            </OContainer>
         </>
     )
 }

@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
-import Log from '../Log';
-import Search from '../Search'
-import Button from '../Button'
+import Log from '../Log/Log';
+import Search from '../Search/Search'
 import { Link } from "react-router-dom"
+import { Headers, HeaderL, LoginF, SearchF } from './Header.styled';
+
 
 function Header({setData}) {
   
